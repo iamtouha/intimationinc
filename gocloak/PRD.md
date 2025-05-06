@@ -72,38 +72,49 @@ A central IAM server with:
 
 ## 4. Functional Requirements
 
-### 4.1 Realms (Core IAM)
+### 4.1 Realms (Core IAM Functionality)
 
-- Multi-tenancy via isolated realms.
-- Per realm:
+The system must support **multi-tenancy via Realms**, where each realm represents an isolated identity space (users, clients, roles, etc.).
 
-  - Clients.
-  - Users, groups.
-  - Roles, permissions.
-  - Configurations (tokens, password policies).
+#### Features:
 
-### 4.2 REST API (Public Interface)
+- Create, update, delete, and retrieve realms
+- Each realm maintains its own:
 
-- Realm management (CRUD).
-- User management (CRUD).
-- Client application management (CRUD).
-- Role assignment APIs.
+  - Clients (apps that authenticate)
+  - Users and groups
+  - Roles and permissions
+  - Configurations (token settings, password policies, etc.)
 
-### 4.3 Admin Panel (Internal Use)
+### 4.2 REST API (External Use – Public IAM Interface)
 
-- Manage realms, users, roles, clients.
-- Access audit logs and metrics.
-- No public REST API; use internal APIs or server-side rendering.
+Expose RESTful endpoints so that external applications and services can integrate with GoCloak as their authentication and authorization provider.
 
----
+#### Features:
+
+- **Realm Management:** APIs to create, update, delete, and retrieve realms.
+- **User Management:** APIs to create, update, delete, and retrieve users per realm.
+- **Client Management:** APIs to register, update, and delete client applications.
+- **Role Management:** APIs to assign roles to users.
+
+### 4.3 Admin Panel (Internal Only)
+
+The admin panel is **internal-facing** and allows system admins to:
+
+- View and manage all realms and their configurations
+- View users and roles per realm
+- Manage client applications
+- View audit logs and metrics
+
+> 🔒 No public REST API is needed for the admin panel. It can directly interact with backend services via internal APIs or server-side rendering.
 
 ## 5. Non-Functional Requirements
 
-- **Performance:** Support 100k concurrent sessions per realm (clustered).
-- **Security:** HTTPS, CSRF protection, input validation.
-- **Extensibility:** Pluggable external identity providers.
-- **Portability:** Dockerized deployments.
-- **Scalability:** Stateless services, horizontal scaling.
+- **Performance:** Should be able to handle 100k concurrent user sessions per realm using cluster
+- **Security:** Enforce HTTPS, CSRF protection in admin panel, input validation
+- **Extensibility:** Pluggable provider model for external identity integrations
+- **Portability:** Dockerized deployment
+- **Scalability:** Horizontal scalability using stateless services
 
 ## 5. Milestones
 
