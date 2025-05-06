@@ -76,7 +76,7 @@ The system will be self-hosted and easy to deploy, with a minimal setup and a fo
 
 ---
 
-## 6. Stakeholders
+## 4. Stakeholders
 
 | Role                 | Team                   |
 | -------------------- | ---------------------- |
@@ -88,21 +88,7 @@ The system will be self-hosted and easy to deploy, with a minimal setup and a fo
 
 ---
 
-## 7. Milestones
-
-| Milestone               | Deadline          |
-| ----------------------- | ----------------- |
-| BRD Approval            | April 15, 2025    |
-| API Design Finalization | April 25, 2025    |
-| MVP Development Start   | May 1, 2025       |
-| MVP Complete            | July 10, 2025     |
-| Internal Alpha Testing  | August 15, 2025   |
-| Beta Release            | September 5, 2025 |
-| Production Release      | October 1, 2025   |
-
----
-
-## 8. Risks & Mitigations
+## 5. Risks & Mitigations
 
 | Risk                                | Mitigation                              |
 | ----------------------------------- | --------------------------------------- |
@@ -113,7 +99,7 @@ The system will be self-hosted and easy to deploy, with a minimal setup and a fo
 
 ---
 
-## 9. Success Metrics
+## 6. Success Metrics
 
 - Achieve 90% test coverage on API and Admin Panel.
 - Maintain <200ms average API response time under load.

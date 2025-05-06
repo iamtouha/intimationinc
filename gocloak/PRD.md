@@ -28,6 +28,8 @@ A central IAM server with:
   - Optional login and registration UIs for end-users
   - A modular architecture for future expansion: external IdPs, MFA, audit logs, etc.
 
+---
+
 ## 2. Product Features
 
 ### 2.1 Admin Panel (Internal Use)
@@ -52,6 +54,8 @@ A central IAM server with:
 - **Authorization Code Flow:** For secure web and mobile app authorization.
 - **Implicit Flow:** For client-side applications that need direct tokens.
 
+---
+
 ## 3. User Stories
 
 ### 3.1 As an administrator
@@ -70,13 +74,15 @@ A central IAM server with:
 - I want to support 100k concurrent users per realm.
 - I want API responses under 200ms for scalability and performance.
 
+---
+
 ## 4. Functional Requirements
 
 ### 4.1 Realms (Core IAM Functionality)
 
 The system must support **multi-tenancy via Realms**, where each realm represents an isolated identity space (users, clients, roles, etc.).
 
-#### Features:
+**Features:**
 
 - Create, update, delete, and retrieve realms
 - Each realm maintains its own:
@@ -90,7 +96,7 @@ The system must support **multi-tenancy via Realms**, where each realm represent
 
 Expose RESTful endpoints so that external applications and services can integrate with GoCloak as their authentication and authorization provider.
 
-#### Features:
+**Features:**
 
 - **Realm Management:** APIs to create, update, delete, and retrieve realms.
 - **User Management:** APIs to create, update, delete, and retrieve users per realm.
@@ -108,6 +114,8 @@ The admin panel is **internal-facing** and allows system admins to:
 
 > 🔒 No public REST API is needed for the admin panel. It can directly interact with backend services via internal APIs or server-side rendering.
 
+---
+
 ## 5. Non-Functional Requirements
 
 - **Performance:** Should be able to handle 100k concurrent user sessions per realm using cluster
@@ -116,7 +124,9 @@ The admin panel is **internal-facing** and allows system admins to:
 - **Portability:** Dockerized deployment
 - **Scalability:** Horizontal scalability using stateless services
 
-## 5. Milestones
+---
+
+## 6. Milestones
 
 | Milestone               | Dateline          |
 | ----------------------- | ----------------- |
