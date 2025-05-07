@@ -48,7 +48,7 @@ GoCloak will have the following core components:
 
 ## 3. System Architecture Diagram
 
-![alt text](/gocloak/assets/system-architecture-diagram.png)
+![system architecture diagram](https://raw.githubusercontent.com/Intimationinc/backend-two/b3f50a6e62dd3c740c8d19a37417145c222b897d/gocloak/assets/system-architecture-diagram.png)
 
 - **Client:** Any backend machine, public frontend, mobile, or device requesting IAM service.
 - **API:** API endpoints that allow clients to communicate with GoCloak.
